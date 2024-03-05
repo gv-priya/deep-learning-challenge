@@ -1,0 +1,28 @@
+ Explain the purpose of this analysis:
+find the applicants that will be successful if funded by AlphabetSoup organisation. 
+
+Results:
+using ReLU as the neural network activation function in starter_code . this function is very popular as it gives result close to 0 or 1. it doesnot activate all the neurons at the same time. the neurons will get deactivated when the output of linear transformation is less than 0 and therefore it will ignore negative values. 
+the sigmoid function: this is a non-linear activation function. The sigmoid transforms the values in the range of 0 and 1. since sigmoid is non linear only when there are multiple neurons with sigmoid function as result of this the output is non linear. 
+the sigmoid function is not symetric around zero so the output of sigmoid function is of the same sign.
+incontrast the tanh function is symmetric near 0 and so it uses a range from -1 to +1. the tanh function is better than sigmoid as the gradients are not restricted to move in certain direction.
+
+leaky_ReLU: is a variation of ReLu, it corrects the disadvantages of ReLU function. in Leaky ReLU(LR) function, we use a small linear component to the values that are less than 0 to activate the neurons.
+
+ELU activation function: Exponential linear unit that is unlike the LR and parametric ReLu, as it shows the negative values in the form of a logarithmic curve instead of straight line.
+
+Swish: this is a relatively new discovery by google . swish is computationally efficient and shows better performance than ReLU on deeper models. the swish ranges from -infinity to +infinity.
+
+Data Preprocessing:
+1. the columns EIN and NAME were dropped.
+2. the target for the model is the  the status or the is_successful column
+3. the features of the model is the classification, application type, income_bracket, organisation, affiliation, ask_amount, special_consideration.
+4. status was not a feature or target.
+Compiling, training and evaluating model:
+1. we selected 3 activaition layers.
+2. when we use only 2 activation functions we can achieve 99% accuracy, whereas when we mix multiple linear and non linear activiation functions the accuracy reduced to 72%
+3. increasing the activation layers increased the accuracy of the model performance.
+
+
+
+
